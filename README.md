@@ -1,2 +1,2 @@
-#  - tDCS-induced Electric Field Models from MRI - Innsbruck-2025 - Davide Aloi
+# tDCS-induced Electric Field Models from MRI anatomical scans
 Material for the workshop tDCS-induced Electric Field Models from MRI - University of Innsbruck, Neuroscience Workshop Series2025
