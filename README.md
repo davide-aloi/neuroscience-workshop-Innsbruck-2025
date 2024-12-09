@@ -2,14 +2,17 @@
 Material for the workshop tDCS-induced Electric Field Models from MRI - University of Innsbruck, Neuroscience Workshop (Series 2025)
 
 ## Introduction
+...
 
 ## Software requirement and installation
 The workshop will require the following software:
 - [Matlab](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html)
-- [MRIcroGL](https://www.nitrc.org/projects/mricrogl)
-- [Miniconda](https://docs.anaconda.com/miniconda/)
+- [ROAST](https://www.parralab.org/roast/): An open source tool that runs on Matlab, used to compute electric fields from MRI structural images.  
+- [MRIcroGL](https://www.nitrc.org/projects/mricrogl): MRIcroGL allows you to view 2D slices and renderings of your brain imaging data. We will use it to find the coordinates for the virtual electrodes
+- [Miniconda](https://docs.anaconda.com/miniconda/): A lighter installation of Anaconda Distribution that includes only conda and Python. This will be used to create the environment with the libraries used to access and visualise the results from ROAST.
 - [Git](https://git-scm.com/downloads)
 - [VScode \(suggested\)](https://code.visualstudio.com/download)
+
 
 ```Note that most of the commands to build the environments and install the dependencies can be run from the terminal within VS code. If you use a different editor you can run the commands from your preferred terminal directly.```
 
@@ -41,7 +44,6 @@ tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
 
 
 # ROAST 
-ROAST is an open source tool that runs on Matlab and will be used to compute electric fields from MRI structural images.
 
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
 ```bash
