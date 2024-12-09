@@ -13,35 +13,45 @@ The workshop will require the following software:
 
 ```Note that most of the commands to build the environments and install the dependencies can be run from the terminal within VS code. If you use a different editor you can run the commands from your preferred terminal directly.```
 
+# Repository
+[Install git](https://github.com/git-guides/install-git) if needed, and clone the current repository:
+
+```bash
+git clone https://github.com/davide-aloi/neuroscience-workshop-Innsbruck-2025
+cd neuroscience-workshop-Innsbruck-2025
+```
+
+### Python envioronment
+1) Download and install Miniconda
+2) From VScode, open a new terminal and build the environment with the required libraries:
+
+```bash
+conda env create -f assets/environment.yml
+# Verify that the environment was correctly created
+conda env list
+```
+
+This should output: 
+```console
+# conda environments:
+base                     C:\Users\User\miniconda3
+tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
+```
+
+
+
 # ROAST 
 ROAST is an open source tool that runs on Matlab and will be used to compute electric fields from MRI structural images.
 
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
 ```bash
-git clone https://github.com/andypotatohy/roast
+# Clone ROAST into the roast folder of this repository
+git clone https://github.com/andypotatohy/roast roast
 ```
+
 2) From Matlab, add the roast folder to the paths:
 ```matlab
 addpath('path-to-roast/roast')  
-```
-
-
-### Python envioronment
-1) Download Miniconda from the above link and [add conda to the environment paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
-
-2) From VScode, open a new terminal and clone the repository:
-
-```bash
-git clone https://github.com/davide-aloi/neuroscience-workshop-Innsbruck-2025
-```
-
-3) Build the conda enviornmet with the required libraries by running 
-
-```bash
-cd assets
-conda env create -f environment.yml
-# Verify that the environment was correctly created
-conda env list
 ```
 
 
@@ -51,3 +61,7 @@ conda env list
 - [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
 - [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
 
+
+# FAQs
+- [Git command not found (windows) &rarr; add git to system paths](https://linuxhint.com/add-git-to-path-windows/)
+- [Conda command not found (windows) &rarr; add conda to system paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
