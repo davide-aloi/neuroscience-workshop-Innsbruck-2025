@@ -5,7 +5,7 @@ Material for the workshop tDCS-induced Electric Field Models from MRI - Universi
 
 In the field of *Transcranial Electric Stimulation* (tES), accurately simulating how tES-induced current spreads in the brain, which regions it reaches, and to what extent, is fundamental to understanding inter-individual differences in response to the stimulation. In fact, differences in skull shape, cortical folding, cerebrospinal fluid, or other neuroanatomical features greatly influence electric fields induced by tES in the brain.
 
-Models of tES electric fields in the brain can help explain the great variability observed in studies involving non-invasive brain stimulation (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, the same models can help optimise tES electrode **montage to the specific neuroanatomy of an individual.
+Models of tES electric fields in the brain can help explain the great variability observed in studies involving non-invasive brain stimulation (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, the same models can help optimise tES electrode montage to the specific neuroanatomy of an individual.
 
 ## Software requirement and installation
 The workshop will require the following software:
