@@ -45,7 +45,6 @@ tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
 ```
 
 
-
 # ROAST 
 
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
@@ -58,6 +57,10 @@ git clone https://github.com/andypotatohy/roast roast
 ```matlab
 addpath('path-to-roast/roast')  
 ```
+
+## Download test data
+- [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
+- [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
 
 
 
