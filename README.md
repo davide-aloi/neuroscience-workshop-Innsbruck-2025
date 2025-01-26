@@ -1,5 +1,5 @@
 # tDCS-induced Electric Field Models from MRI anatomical scans
-Material for the workshop tDCS-induced Electric Field Models from MRI - University of Innsbruck, Neuroscience Workshop (Series 2025)
+Material for the workshop tDCS-induced Electric Field Models from MRI - University of Innsbruck, Neuroscience Workshop (Series 2025).
 
 ## Introduction
 
@@ -7,7 +7,7 @@ In the field of *Transcranial Electric Stimulation* (tES), accurately simulating
 
 Models of tES electric fields in the brain can help explain the great variability observed in studies involving tES (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, those models can also help optimise tES electrode montage to the specific neuroanatomical features of an individual.
 
-In brief, current-flow models are created by starting with MRI scans of human heads, on which the following steps are performed:
+In brief, current-flow models are created using MRI anatomical scans of human heads (i.e., T1 and T2 scans), on which the several processes are performed:
 
 1. The MRI scan is segmented into different tissues (i.e., each voxel in the scan is assigned to either grey matter, white matter, cerebrospinal fluid, bone, skin, etc.).
 2. Different tissue conductivities are assigned to each tissue type.
