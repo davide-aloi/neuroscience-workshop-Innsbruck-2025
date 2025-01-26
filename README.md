@@ -5,9 +5,21 @@ Material for the workshop tDCS-induced Electric Field Models from MRI - Universi
 
 In the field of *Transcranial Electric Stimulation* (tES), accurately simulating how tES-induced current spreads in the brain, which regions it reaches, and to what extent, is fundamental to understanding inter-individual differences in response to the stimulation. In fact, differences in skull shape, cortical folding, cerebrospinal fluid, or other neuroanatomical features greatly influence electric fields induced by tES in the brain.
 
-Models of tES electric fields in the brain can help explain the great variability observed in studies involving tES (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, those models can help optimise tES electrode montage to the specific neuroanatomical features of an individual.
+Models of tES electric fields in the brain can help explain the great variability observed in studies involving tES (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, those models can also help optimise tES electrode montage to the specific neuroanatomical features of an individual.
 
-In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_) <sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data  visualisation and analysis.
+In brief, current-flow models are created by starting with MRI scans of human heads, on which the following steps are performed:
+
+1. The MRI scan is segmented into different tissues (i.e., each voxel in the scan is assigned to either grey matter, white matter, cerebrospinal fluid, bone, skin, etc.).
+2. Different tissue conductivities are assigned to each tissue type.
+3. Virtual electrodes are placed on the scalp based on pre-specified locations.
+4. Everything is then converted into a 3D mesh.
+5. The current flow is estimated through a finite element model (FEM) solved numerically.
+
+![Description](image/README/1737903920342.png){width=200 height=100}
+
+
+
+In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and analysis.
 
 
 ## Software requirement and installation
@@ -47,6 +59,11 @@ base                     C:\Users\User\miniconda3
 tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
 ```
 
+To activate a environment:
+
+```bash
+conda activate tdcs_env
+```
 
 ### ROAST 
 
@@ -65,7 +82,6 @@ addpath('path-to-roast/roast')
 ### Download test data
 - [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
 - [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
-
 
 
 ## Useful resources
