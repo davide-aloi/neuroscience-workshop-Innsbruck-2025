@@ -5,7 +5,10 @@ Material for the workshop tDCS-induced Electric Field Models from MRI - Universi
 
 In the field of *Transcranial Electric Stimulation* (tES), accurately simulating how tES-induced current spreads in the brain, which regions it reaches, and to what extent, is fundamental to understanding inter-individual differences in response to the stimulation. In fact, differences in skull shape, cortical folding, cerebrospinal fluid, or other neuroanatomical features greatly influence electric fields induced by tES in the brain.
 
-Models of tES electric fields in the brain can help explain the great variability observed in studies involving non-invasive brain stimulation (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, the same models can help optimise tES electrode montage to the specific neuroanatomy of an individual.
+Models of tES electric fields in the brain can help explain the great variability observed in studies involving tES (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, those models can help optimise tES electrode montage to the specific neuroanatomical features of an individual.
+
+In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_) <sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data  visualisation and analysis.
+
 
 ## Software requirement and installation
 The workshop will require the following software:
@@ -19,7 +22,7 @@ The workshop will require the following software:
 
 ```Note that most of the commands to build the environments and install the dependencies can be run from the terminal within VS code. If you use a different editor you can run the commands from your preferred terminal directly.```
 
-# Repository
+## Repository
 [Install git](https://github.com/git-guides/install-git) if needed, and clone the current repository:
 
 ```bash
@@ -45,11 +48,12 @@ tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
 ```
 
 
-# ROAST 
+### ROAST 
 
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
 ```bash
 # Clone ROAST into the roast folder of this repository
+mkdir roast
 git clone https://github.com/andypotatohy/roast roast
 ```
 
@@ -58,7 +62,7 @@ git clone https://github.com/andypotatohy/roast roast
 addpath('path-to-roast/roast')  
 ```
 
-## Download test data
+### Download test data
 - [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
 - [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
 
@@ -70,6 +74,10 @@ addpath('path-to-roast/roast')
 - [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
 
 
-# FAQs
+## FAQs
 - [Git command not found (windows) &rarr; add git to system paths](https://linuxhint.com/add-git-to-path-windows/)
 - [Conda command not found (windows) &rarr; add conda to system paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
+
+# References
+1) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
+2) ...
