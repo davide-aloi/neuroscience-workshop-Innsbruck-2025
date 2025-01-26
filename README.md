@@ -13,10 +13,11 @@ In brief, current-flow models are created by starting with MRI scans of human he
 2. Different tissue conductivities are assigned to each tissue type.
 3. Virtual electrodes are placed on the scalp based on pre-specified locations.
 4. Everything is then converted into a 3D mesh.
-5. The current flow is estimated through a finite element model (FEM) solved numerically.
+5. The current flow is estimated through a finite element model (FEM) solved numerically.  
 
-![Description](image/README/1737903920342.png){width=200 height=100}
-
+<div style="text-align: center;">
+<img src="image/README/1737903920342.png" alt="alt text" width="250">  
+</div>  
 
 
 In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and analysis.
