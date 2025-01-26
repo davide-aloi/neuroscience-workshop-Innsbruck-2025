@@ -19,7 +19,7 @@ In summary, current-flow models are generated using MRI anatomical scans of huma
 <img src="image/README/1737903920342.png" width="250">  
 </div>
   
-  
+
 In this hands-on workshop, we will go through the entire process highlighted above and we will also learn how to visualise the computed tES models, as well as how to calculate region-of-interest (ROI) metrics using an Atlas. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and ROI metrics calculation.
 
 ## Software requirement and installation
@@ -91,7 +91,7 @@ addpath('path-to-roast/roast')
 
 # Step-by-Step Instructions
 For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
-1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs\roast.md).
+1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs/roast.md).
 2. Normalisation with SPM.
 3. Visualising results and gathering ROI-specific metrics.
 4. ...
