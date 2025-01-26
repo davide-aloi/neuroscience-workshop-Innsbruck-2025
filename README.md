@@ -18,9 +18,9 @@ In summary, current-flow models are generated using MRI anatomical scans of huma
 <div style="text-align: center;">
 <img src="image/README/1737903920342.png" width="250">  
 </div>
-
-In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and analysis.
-
+  
+  
+In this hands-on workshop, we will go through the entire process highlighted above and we will also learn how to visualise the computed tES models, as well as how to calculate region-of-interest (ROI) metrics using an Atlas. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and ROI metrics calculation.
 
 ## Software requirement and installation
 The workshop will require the following software:
