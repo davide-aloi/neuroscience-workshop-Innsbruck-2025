@@ -16,9 +16,8 @@ In brief, current-flow models are created by starting with MRI scans of human he
 5. The current flow is estimated through a finite element model (FEM) solved numerically.  
 
 <div style="text-align: center;">
-<img src="image/README/1737903920342.png" alt="alt text" width="250">  
-</div>  
-
+<img src="image/README/1737903920342.png" width="250">  
+</div>
 
 In this hands-on workshop, we will go through the different steps needed to simulate, visualise, and analyse electric field distribution given a tES montage and an MRI anatomical scan of a human head. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and analysis.
 
@@ -35,7 +34,7 @@ The workshop will require the following software:
 
 ```Note that most of the commands to build the environments and install the dependencies can be run from the terminal within VS code. If you use a different editor you can run the commands from your preferred terminal directly.```
 
-## Repository
+### Repository
 [Install git](https://github.com/git-guides/install-git) if needed, and clone the current repository:
 
 ```bash
@@ -84,14 +83,22 @@ addpath('path-to-roast/roast')
 - [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
 - [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
 
-
 ## Useful resources
 - [ROAST homepage](https://www.opensourceimaging.org/project/roast/#:~:text=ROAST%3A%20A%20fully%20automated%2C%20Realistic,such%20as%20iso2mesh%20and%20getDP.)
 - [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
 - [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
 
 
-## FAQs
+# Step-by-Step Instructions
+For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
+1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs\roast.md).
+2. Normalisation with SPM.
+3. Visualising results and gathering ROI-specific metrics.
+4. ...
+
+
+
+# FAQs
 - [Git command not found (windows) &rarr; add git to system paths](https://linuxhint.com/add-git-to-path-windows/)
 - [Conda command not found (windows) &rarr; add conda to system paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
 
