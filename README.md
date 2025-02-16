@@ -87,14 +87,15 @@ addpath('path-to-roast/roast')
 - [ROAST homepage](https://www.opensourceimaging.org/project/roast/#:~:text=ROAST%3A%20A%20fully%20automated%2C%20Realistic,such%20as%20iso2mesh%20and%20getDP.)
 - [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
 - [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
-
+- [AAL3 Atlas](https://www.oxcns.org/aal3.html)
 
 # Step-by-Step Instructions
 For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
-1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs/roast.md).
-2. Normalisation with SPM.
-3. Visualising results and gathering ROI-specific metrics.
-4. ...
+1. 
+2. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs/roast.md).
+3. Normalisation with SPM.
+4. Visualising results and gathering ROI-specific metrics.
+5. ...
 
 
 
