@@ -17,3 +17,24 @@ A few notes about ROAST:
 
 ### Step-by-step breakdown of the ROAST pipeline
 
+ROAST starts from a T1-weighted anatomical MRI in NIfTI format. Optionally, a T2-weighted scan can also be provided to improve segmentation quality and mesh definition.
+
+Using SPM12, ROAST automatically segments the head into the following tissue types:
+
+- Grey Matter (GM)
+
+- White Matter (WM)
+
+- Cerebrospinal Fluid (CSF)
+
+- Skull (bone)
+
+- Skin (scalp)
+
+- Eyes
+
+- Air cavities
+
+During the segmentation step, each voxel is labeled based on its tissue class, and the result is stored as a segmented volume.
+
+!NOTE The quality of segmentation strongly affects the final model. Including a T2 scan is especially helpful when the T1 image alone does not offer sufficient contrast between CSF and surrounding tissues.
