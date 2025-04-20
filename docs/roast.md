@@ -19,6 +19,11 @@ A few notes about ROAST:
 
 ROAST starts from a T1-weighted anatomical MRI in NIfTI format. Optionally, a T2-weighted scan can also be provided to improve segmentation quality and mesh definition.
 
+> [!NOTE]  
+>Why is segmentation needed?
+>Segmentation is a critical step because different tissues in the head have very different electrical conductivities. For example, CSF conducts current much more easily than skull or white matter. By assigning each voxel in the MRI to a specific tissue class, ROAST can later assign appropriate conductivity values and generate a realistic head model. This is essential for accurately simulating how current flows during tDCS, particularly in anatomically complex or lesioned brains.
+
+
 Using SPM12, ROAST automatically segments the head into the following tissue types:
 
 - Grey Matter (GM)
