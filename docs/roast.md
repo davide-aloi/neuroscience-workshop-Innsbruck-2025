@@ -69,4 +69,10 @@ Next, ROAST places virtual electrodes on the scalp using one of two methods:
 
 For greater anatomical precision, especially in individualised modelling, you may choose to specify custom electrode coordinates per participant.
 
+For completeness, we will go through both approaches.
 
+
+##### 4.1 Electrode placement via standard EEG montages
+
+
+##### 4.2 Manual electrode placement
