@@ -16,7 +16,7 @@ In summary, current-flow models are generated using MRI anatomical scans of huma
 5. The current flow is estimated through a finite element model (FEM) solved numerically.  
 
 <div style="text-align: center;">
-<img src="image/README/1737903920342.png" width="250">  
+<img src="images/README/1737903920342.png" width="250">  
 </div>
   
 

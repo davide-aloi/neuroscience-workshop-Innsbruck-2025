@@ -11,8 +11,10 @@ In this workshop, we will focus on ROAST (Realistic vOlumetric Approach-based Si
 A few notes about ROAST: 
 
 - ROAST is a one-command pipeline that automates most processing steps, including tissue segmentation, electrode placement, meshing, and FEM solving.
+- ROAST electrode placement can be achieved both specifying 10-20 electrode positions or from actual MRI coordinates (i.e., identifyied manually using MRIcrongl).
 - The ROAST package is built on top of existing tools like SPM12 (Matlab), Iso2Mesh, and getDP.
 - ROAST handles all steps in a unified workflow.
+- [something about space - conversion]
 
 
 ### Step-by-step breakdown of the ROAST pipeline
@@ -24,22 +26,47 @@ ROAST starts from a T1-weighted anatomical MRI in NIfTI format. Optionally, a T2
 >Segmentation is a critical step because different tissues in the head have very different electrical conductivities. For example, CSF conducts current much more easily than skull or white matter. By assigning each voxel in the MRI to a specific tissue class, ROAST can later assign appropriate conductivity values and generate a realistic head model. This is essential for accurately simulating how current flows during tDCS, particularly in anatomically complex or lesioned brains.
 
 
+#### 1. Tissue segmentation
 Using SPM12, ROAST automatically segments the head into the following tissue types:
 
-- Grey Matter (GM)
-
-- White Matter (WM)
-
-- Cerebrospinal Fluid (CSF)
-
-- Skull (bone)
-
-- Skin (scalp)
-
-- Eyes
-
-- Air cavities
+- white matter (WM),
+- grey matter (GM),
+- skull,
+- scalp,
+- CSF,
+- air cavities. 
 
 During the segmentation step, each voxel is labeled based on its tissue class, and the result is stored as a segmented volume.
 
 !NOTE The quality of segmentation strongly affects the final model. Including a T2 scan is especially helpful when the T1 image alone does not offer sufficient contrast between CSF and surrounding tissues.
+
+#### 2. Conductivity values assignment
+
+Once the tissues have been segmented, ROAST assigns a set of default isotropic conductivity values to each tissue type and to the electrode components. These conductivity values determine how easily electrical current can pass through each material, which is critical for realistic current flow modelling. The default values used by ROAST are (Huang et al., 2019):
+
+- Grey matter: 0.276 S/m
+- White matter: 0.126 S/m
+- Cerebrospinal fluid (CSF): 1.65 S/m
+- Bone: 0.01 S/m
+- Skin: 0.465 S/m
+- Air: 2.5 × 10⁻¹⁴ S/m
+- Electrodes: 5.9 × 10⁷ S/m
+- Conductive paste: 0.3 S/m
+
+These values are assumed to be isotropic (the same in all directions) and constant across the entire model unless manually adjusted.
+
+
+#### 3. Post processing
+
+After segmentation, ROAST applies a custom post-processing step to refine the tissue maps produced by SPM. This includes smoothing the segmentations, filling CSF gaps, and removing disconnected voxels (Huang et al., 2019). The result is a clean, discrete tissue map in which each voxel is uniquely assigned to one tissue type specified above.
+
+
+#### 4. Electrode placement
+Next, ROAST places virtual electrodes on the scalp using one of two methods:
+
+- Standard EEG systems (e.g., 10–20 or BioSemi-256);
+- Custom-defined coordinates in subject-specific MRI space.
+
+For greater anatomical precision, especially in individualised modelling, you may choose to specify custom electrode coordinates per participant.
+
+
