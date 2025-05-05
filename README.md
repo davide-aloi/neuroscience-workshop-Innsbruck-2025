@@ -83,12 +83,6 @@ addpath('path-to-roast/roast')
 - [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
 - [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
 
-## Useful resources
-- [ROAST homepage](https://www.opensourceimaging.org/project/roast/#:~:text=ROAST%3A%20A%20fully%20automated%2C%20Realistic,such%20as%20iso2mesh%20and%20getDP.)
-- [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
-- [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
-- [AAL3 Atlas](https://www.oxcns.org/aal3.html)
-
 # Step-by-Step Instructions
 For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
 1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs/roast.md).
@@ -101,6 +95,13 @@ For simplicity, the workflow is divided into sub-pages, each focusing on a speci
 # FAQs
 - [Git command not found (windows) &rarr; add git to system paths](https://linuxhint.com/add-git-to-path-windows/)
 - [Conda command not found (windows) &rarr; add conda to system paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
+
+# Useful resources
+- [ROAST homepage](https://www.opensourceimaging.org/project/roast/#:~:text=ROAST%3A%20A%20fully%20automated%2C%20Realistic,such%20as%20iso2mesh%20and%20getDP.)
+- [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
+- [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
+- [AAL3 Atlas](https://www.oxcns.org/aal3.html)
+
 
 # References
 1) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
