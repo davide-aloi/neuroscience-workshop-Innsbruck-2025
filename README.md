@@ -60,7 +60,6 @@ tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
 ```
 
 To activate a environment:
-
 ```bash
 conda activate tdcs_env
 ```
@@ -74,9 +73,9 @@ mkdir roast
 git clone https://github.com/andypotatohy/roast roast
 ```
 
-2) From Matlab, add the roast folder to the paths:
+2) From Matlab, navigate to the current repository folder, and either right-click on the roast folder -> add to path or run the following command in the Matlab console:
 ```matlab
-addpath('path-to-roast/roast')  
+addpath('roast')  
 ```
 
 ### Download test data

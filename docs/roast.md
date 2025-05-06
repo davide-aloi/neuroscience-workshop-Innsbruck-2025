@@ -17,8 +17,9 @@ A few notes about ROAST:
 - [something about space - conversion]
 
 
-### Step-by-step breakdown of the ROAST pipeline
+The ROAST pipeline consists of several key steps, each of which plays a crucial role in generating accurate and realistic electric field models. We will first go through a theoretical overview of the pipeline, and then we will run some simulations on sample data.
 
+### Step-by-step breakdown of the ROAST pipeline
 ROAST starts from a T1-weighted anatomical MRI in NIfTI format. Optionally, a T2-weighted scan can also be provided to improve segmentation quality and mesh definition.
 
 > [!NOTE]  
@@ -38,10 +39,11 @@ Using SPM12, ROAST automatically segments the head into the following tissue typ
 
 During the segmentation step, each voxel is labeled based on its tissue class, and the result is stored as a segmented volume.
 
-!NOTE The quality of segmentation strongly affects the final model. Including a T2 scan is especially helpful when the T1 image alone does not offer sufficient contrast between CSF and surrounding tissues.
+
+> [!NOTE]  
+>The quality of segmentation strongly affects the final model. Including a T2 scan is especially helpful when the T1 image alone does not offer sufficient contrast between CSF and surrounding tissues.
 
 #### 2. Conductivity values assignment
-
 Once the tissues have been segmented, ROAST assigns a set of default isotropic conductivity values to each tissue type and to the electrode components. These conductivity values determine how easily electrical current can pass through each material, which is critical for realistic current flow modelling. The default values used by ROAST are (Huang et al., 2019):
 
 - Grey matter: 0.276 S/m
@@ -57,15 +59,14 @@ These values are assumed to be isotropic (the same in all directions) and consta
 
 
 #### 3. Post processing
-
 After segmentation, ROAST applies a custom post-processing step to refine the tissue maps produced by SPM. This includes smoothing the segmentations, filling CSF gaps, and removing disconnected voxels (Huang et al., 2019). The result is a clean, discrete tissue map in which each voxel is uniquely assigned to one tissue type specified above.
 
 
 #### 4. Electrode placement
 Next, ROAST places virtual electrodes on the scalp using one of two methods:
 
-- Standard EEG systems (e.g., 10–20 or BioSemi-256);
-- Custom-defined coordinates in subject-specific MRI space.
+- Method 1: Electrode placement via standard EEG systems (e.g., 10–20 or BioSemi-256);
+- Method 2: Electrode placement via custom-defined coordinates in subject-specific MRI space.
 
 For greater anatomical precision, especially in individualised modelling, you may choose to specify custom electrode coordinates per participant.
 
@@ -73,6 +74,15 @@ For completeness, we will go through both approaches.
 
 
 ##### 4.1 Electrode placement via standard EEG montages
+ROAST can automatically place electrodes on the scalp using standard EEG montages. This is particularly useful for those who want to quickly set up a simulation without needing to manually specify electrode coordinates. The user can select from a list of standard montages, such as the 10-20 system or the BioSemi-256 system. ROAST will then automatically convert these locations to the subject-specific MRI space using the transformation matrix generated during the normalisation step. 
+
+The list of available montages and electrode locations can be found in the [ROAST documentation](https://github.com/andypotatohy/roast/blob/master/capInfo.xlsx). 
+
 
 
 ##### 4.2 Manual electrode placement
+Alternatively, you can manually specify the coordinates of the electrodes in the subject's MRI space. This is useful for custom montages or when using non-standard electrode placements. To do this, you will need to identify the coordinates of the desired electrode locations in the MRI space and provide them to ROAST in a specific format.
+
+To accurately identify the coordinates we will use the visualisation tool called MRIcroGL. This tool allows you to view the MRI scan in with a three-dimensional render, along with the canonical multi-planar view, and to select any voxel in the 3D space and display the respective MRI volume space coordinates. 
+
+
