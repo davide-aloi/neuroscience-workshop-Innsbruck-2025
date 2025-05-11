@@ -86,3 +86,4 @@ Alternatively, you can manually specify the coordinates of the electrodes in the
 To accurately identify the coordinates we will use the visualisation tool called MRIcroGL. This tool allows you to view the MRI scan in with a three-dimensional render, along with the canonical multi-planar view, and to select any voxel in the 3D space and display the respective MRI volume space coordinates. 
 
 
+![me](images\README\ezgif-810074e308f39d.gif)
