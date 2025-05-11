@@ -6,7 +6,7 @@ One approach to address the challenges posed by inter-individual anatomical vari
 
 
 ## ROAST
-In this workshop, we will focus on ROAST (Realistic vOlumetric Approach-based Simulator for TES), a fully automated MATLAB-based pipeline designed to model current flow induced by tES. ROAST allows to compute electric field distributions starting from a T1-weighted (and optionally T2-weighted) anatomical MRI, requiring only minimal manual intervention.
+In this workshop, I will focus on ROAST (Realistic vOlumetric Approach-based Simulator for TES), a fully automated MATLAB-based pipeline designed to model current flow induced by tES. ROAST allows to compute electric field distributions starting from a T1-weighted (and optionally T2-weighted) anatomical MRI, requiring only minimal manual intervention.
 
 A few notes about ROAST: 
 
@@ -17,7 +17,7 @@ A few notes about ROAST:
 - [something about space - conversion]
 
 
-The ROAST pipeline consists of several key steps, each of which plays a crucial role in generating accurate and realistic electric field models. We will first go through a theoretical overview of the pipeline, and then we will run some simulations on sample data.
+The ROAST pipeline consists of several key steps, each of which plays a crucial role in generating accurate and realistic electric field models. I will first go through a theoretical overview of the pipeline, and then I will run some simulations on sample data.
 
 ### Step-by-step breakdown of the ROAST pipeline
 ROAST starts from a T1-weighted anatomical MRI in NIfTI format. Optionally, a T2-weighted scan can also be provided to improve segmentation quality and mesh definition.
@@ -77,7 +77,7 @@ Next, ROAST places virtual electrodes on the scalp using one of two methods:
 
 For greater anatomical precision, especially in individualised modelling, you may choose to specify custom electrode coordinates per participant.
 
-For completeness, we will go through both approaches.
+For completeness, I will go through both approaches.
 
 
 ##### 4.1 Electrode placement via standard EEG montages
@@ -90,7 +90,7 @@ The list of available montages and electrode locations can be found in the [ROAS
 ##### 4.2 Manual electrode placement
 Alternatively, you can manually specify the coordinates of the electrodes in the subject's MRI space. This is useful for custom montages or when using non-standard electrode placements. To do this, you will need to identify the coordinates of the desired electrode locations in the MRI space and provide them to ROAST in a specific format.
 
-To accurately identify the coordinates we will use the visualisation tool called MRIcroGL. This tool allows you to view the MRI scan in with a three-dimensional render, along with the canonical multi-planar view, and to select any voxel in the 3D space and display the respective MRI volume space coordinates. 
+To accurately identify the coordinates I will use the visualisation tool called MRIcroGL. This tool allows you to view the MRI scan in with a three-dimensional render, along with the canonical multi-planar view, and to select any voxel in the 3D space and display the respective MRI volume space coordinates. 
 
 Below it's shown how to do this:
 ![Electrode placement demo](../images/README/ezgif-810074e308f39d.gif)
@@ -107,4 +107,4 @@ In addition to specifying electrode positions, ROAST allows users to define the 
 Other parameters that one can specify are present in the official documentation.
 
 ### Summary
-This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. We covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches. In the next part of the workshop, we will put this into practice by running a full simulation on a sample dataset and visualising the resulting electric field maps.
+This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. I covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches. In the next part of the workshop, I will put this into practice by running a full simulation on a sample dataset and visualising the resulting electric field maps.

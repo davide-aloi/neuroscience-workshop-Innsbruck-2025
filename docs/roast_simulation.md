@@ -1,0 +1,10 @@
+# Running Roast Simulations
+
+In this practical section, I will provide a step-by-step guide on how to run a simulation using ROAST. 
+I will also go through some of the most common issues that may arise during the process and how to solve them. 
+
+A few useful notes to go through this section:
+- The main script to run the simulation is [`bin/run_roast.m`](../bin/run_roast.m). You will be running this via matlab, and I recommend running it section by section using (right click, run section) to understand what each part of the code does.
+- Some issues might arise when running roast. Several comments are added to the code to help debug and fix the issues.
+- You are free to use you test data, or the data we downloaded in the readme section. However, the folder roast/examples contains numerous T1 and T2 scans that can be used to test the pipeline. 
+- ROAST generates a lot of output files during the simulation (i.e., segmentations, meshes etc). I suggest creating a folder and copy-paste the scan(s) that you want to use, and rename them in a way that you can easily identify the raw data from the output files (i.e., 'scan_t1_test.nii'). When re-running a simulation, if ROAST detects that some of the output files already exist, it might skip some steps of the pipeline. This can be handy if you don't want to re-run some steps such as the segmentation, but it can also be a problem if you want to re-run the whole pipeline.

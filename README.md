@@ -78,16 +78,21 @@ git clone https://github.com/andypotatohy/roast roast
 addpath('roast')  
 ```
 
-### Download test data
-- [T1 scan](http://mritemplate.inria.fr/data/Template-T1-U8-RALPFH-HR.nii.gz)
-- [T2 scan](http://mritemplate.inria.fr/data/Template-T2-U8-RALPFH-HR.nii.gz)
+### Download test data and unzip it
+- [T1 scan](https://packages.bic.mni.mcgill.ca/mni-models/icbm152/mni_icbm152_nl_VI_nifti.zip)
+
+Place the file within the mri_data folder of the current repository. 
+
+> [!NOTE]  
+>You can use your MRI scans if you have them, but for the sake of this workshop we will use the ICBM152 template. Moreover, the ROAST pipeline allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
+
 
 # Step-by-Step Instructions
 For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
-1. [Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields](docs/roast.md).
-2. Normalisation with SPM.
-3. Visualising results and gathering ROI-specific metrics.
-4. ...
+1. [Using ROAST: an overview](docs/roast.md).
+2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
+3. Normalisation with SPM. 
+4. Visualising results and gathering ROI-specific metrics.
 
 
 
