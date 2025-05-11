@@ -37,11 +37,18 @@ Using SPM12, ROAST automatically segments the head into the following tissue typ
 - CSF,
 - air cavities. 
 
-During the segmentation step, each voxel is labeled based on its tissue class, and the result is stored as a segmented volume.
+During segmentation, each voxel in the MRI is labeled with a corresponding tissue class. The result is a 3D labeled volume which will be used by ROASR to define conductivity boundaries in the simulation.
+
+Importantly, ROAST improves the raw output from SPM by applying an internal touch-up script that enhances the segmentation. This step includes smoothing sharp edges, filling small gaps (especially in CSF), and eliminating disconnected or anatomically implausible voxels. The cleaned segmentation ensures each voxel is uniquely assigned to a tissue, avoiding overlaps or ambiguity in conductivity assignment.
 
 
 > [!NOTE]  
 >The quality of segmentation strongly affects the final model. Including a T2 scan is especially helpful when the T1 image alone does not offer sufficient contrast between CSF and surrounding tissues.
+
+
+> [!NOTE]  
+>For participants with abnormal anatomies such as large lesions or tumors, standard SPM segmentation may not perform adequately. In such cases, ROAST offers the option to use MultiPriors, a pre-trained deep convolutional neural network designed to handle atypical head anatomies. To enable this, set the multipriors flag to 'on'. Note that MultiPriors requires only a T1-weighted scan and should not be used with a T2 image. For an example, refer to Example 17 in the official ROAST documentation.
+
 
 #### 2. Conductivity values assignment
 Once the tissues have been segmented, ROAST assigns a set of default isotropic conductivity values to each tissue type and to the electrode components. These conductivity values determine how easily electrical current can pass through each material, which is critical for realistic current flow modelling. The default values used by ROAST are (Huang et al., 2019):
@@ -85,5 +92,19 @@ Alternatively, you can manually specify the coordinates of the electrodes in the
 
 To accurately identify the coordinates we will use the visualisation tool called MRIcroGL. This tool allows you to view the MRI scan in with a three-dimensional render, along with the canonical multi-planar view, and to select any voxel in the 3D space and display the respective MRI volume space coordinates. 
 
+Below it's shown how to do this:
+![Electrode placement demo](../images/README/ezgif-810074e308f39d.gif)
 
-![me](images\README\ezgif-810074e308f39d.gif)
+The MRI space coordinates will appear on top, next to the 3D space coordinates.
+
+The coordinates are in the format: (x, y, z), where x, y, and z are the voxel indices in the MRI space. You can then copy these coordinates into a text file or spreadsheet for later use in ROAST.
+
+
+#### 4.3. Electrode specifications
+
+In addition to specifying electrode positions, ROAST allows users to define the shape and size of each electrode individually. Three electrode types are supported: 'disc' (default), 'pad', and 'ring'. Each type has its own required dimensions. For example, disc electrodes are defined by [radius, height] (default: 6 mm × 2 mm), pad electrodes by [length, width, height] (default: 50 mm × 30 mm × 3 mm), and ring electrodes by [inner radius, outer radius, height] (default: 4 mm × 6 mm × 2 mm). This flexibility enables the simulation of mixed electrode montages, where different shapes and sizes are used simultaneously, enhancing the model’s anatomical and functional realism.
+
+Other parameters that one can specify are present in the official documentation.
+
+### Summary
+This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. We covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches. In the next part of the workshop, we will put this into practice by running a full simulation on a sample dataset and visualising the resulting electric field maps.
