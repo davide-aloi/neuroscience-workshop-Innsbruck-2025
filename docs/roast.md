@@ -107,4 +107,4 @@ In addition to specifying electrode positions, ROAST allows users to define the 
 Other parameters that one can specify are present in the official documentation.
 
 ### Summary
-This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. I covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches. In the next part of the workshop, I will put this into practice by running a full simulation on a sample dataset and visualising the resulting electric field maps.
+This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. I covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches.

@@ -28,7 +28,7 @@ roast
 t1_scan = 'C:\Users\User\github\neuroscience-workshop-Innsbruck-2025\mri_data\icbm_avg_152_t1_tal_nlin_symmetric_VI.nii'; 
 t1 = fullfile(t1_scan)
 
-%% Roast settings:
+%% Running ROAST with pre-defined electrode locations
 % Let's use some widely used electrodes locations for motor cortex stimulation.
 % C3	Central, left hemisphere	Over the left motor cortex (somatomotor area)
 % Fp2	Frontal polar, right hemisphere	Right frontopolar cortex (prefrontal region)
@@ -39,7 +39,6 @@ roast(t1, {'C3', 1.85,'Fp2', -1.85}, 'capType', '1020' ,'elecType', 'pad', 'elec
 % This creates extra space around the scalp, allowing electrodes and gel layers
 % to be placed fully within the volume and preventing meshing errors.
 
-
 % Feel free to experiment and change the parameters as you like. Moreover, you can try to run the simulation using
 % both a t1 and a t2 scan. For this, you will need to have a t2 scan and specify it in the roast function. 
 % i.e.,
@@ -48,3 +47,18 @@ roast(t1, {'C3', 1.85,'Fp2', -1.85}, 'capType', '1020' ,'elecType', 'pad', 'elec
 % TIP: In roast/example you can find a number of scans that you can play
 % around with and experiment.
 
+%% Running ROAST with custom electrode locations
+% To manually define electrode positions, you can use the free software MRIcro or MRIcroGL as seen before (note: do not use MRIcron, as it does not provide accurate voxel coordinates).
+% Load the subject’s MRI in MRIcro and click on the desired scalp locations for electrode placement.
+% Record the voxel coordinates displayed by MRIcro into a text file.
+% Save this text file in the subject's MRI directory using the naming convention:{sub-XX}_customLocations.txt
+% For example, if your T1 scan is named subject1.nii and the t2 scan is named subject1_T2.nii, the text file has to be called subject1_customLocations.txt
+% In the text file, list each electrode starting with the name "custom" followed by a number, and provide the corresponding voxel coordinates in a single line. For example:
+% custom1  45  63  78
+% custom2  72  51  60
+% ROAST will automatically detect and place the electrodes defined in this file during simulation.
+% An example is provided in mri_data/sub-01_customLocations.txt
+
+roast(t1, {'custom1', 1.0,'custom2', -1.0}, 'electype', 'pad', 'elecsize', [50 50 3])
+
+% Note that all options can be combined with the custom electrodes (i.e., see example 24 https://github.com/andypotatohy/roast?tab=readme-ov-file#example-24 )

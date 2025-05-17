@@ -2,3 +2,7 @@ roast/*
 mri_data/*
 roast/
 docs/notes.md
+
+!mri_data/template/TPM.nii
+!mri_data/icbm_avg_152_t1_tal_nlin_symmetric_VI.nii
+!mri_data/template/sub-01_customLocations.txt
