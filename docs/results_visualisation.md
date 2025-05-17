@@ -12,3 +12,4 @@ To visualise the results of your ROAST simulations on MRIcroGL, you can follow t
 The output should look similar to the image below:
 ![MRIcroGL Example](../images/README/mricrogl_example.png)
 
+# Visualising ROAST results in Python and applying ROIs

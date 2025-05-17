@@ -3,11 +3,11 @@ Material for the workshop tDCS-induced Electric Field Models from MRI - Universi
 
 ## Introduction
 
-In the field of *Transcranial Electric Stimulation* (tES), accurately simulating how tES-induced current spreads in the brain, which regions it reaches, and to what extent, is fundamental to understanding inter-individual differences in response to the stimulation. In fact, differences in skull shape, cortical folding, cerebrospinal fluid, or other neuroanatomical features greatly influence electric fields induced by tES in the brain.
+In the field of *Transcranial Electric Stimulation* (tES), accurately simulating how tES-induced current spreads in the brain, which regions it reaches, and to what extent, is fundamental to understanding inter-individual differences in response to the stimulation. In fact, differences in skull shape, cortical folding, cerebrospinal fluid, or other neuroanatomical features greatly influence electric fields induced by tES in the brain (Nasimova et al ., 2022)<sup>[1](#references)</sup>.
 
 Models of tES electric fields in the brain can help explain the great variability observed in studies involving tES (that is, the degree to which participants / patients respond to the stimulation varies a lot). Similarly, those models can also help optimise tES electrode montage to the specific neuroanatomical features of an individual.
 
-In summary, current-flow models are generated using MRI anatomical scans of human heads (such as T1 and T2 scans), which undergo several processing steps:
+These current-flow models are generated using MRI anatomical scans of human heads (such as T1 and T2 scans), which undergo several processing steps:
 
 1. The MRI scan is segmented into different tissues (i.e., each voxel in the scan is assigned to either grey matter, white matter, cerebrospinal fluid, bone, skin, etc.).
 2. Different tissue conductivities are assigned to each tissue type.
@@ -20,7 +20,7 @@ In summary, current-flow models are generated using MRI anatomical scans of huma
 </div>
   
 
-In this hands-on workshop, we will go through the entire process highlighted above and we will also learn how to visualise the computed tES models, as well as how to calculate region-of-interest (ROI) metrics using an Atlas. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[1](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results, and Python for the data visualisation and ROI metrics calculation.
+In this workshop, we will go through the entire process highlighted above and we will see how to visualise the computed tES models. We will use ROAST (_Realistic Volumetric-Approach-Based Simulator For TES_)<sup>[2](#references)</sup> for the simulation, SPM (MATLAB) for the normalisation of the results and MRIcroGL for the visualisation of the results.
 
 ## Software requirement and installation
 The workshop will require the following software:
@@ -30,7 +30,6 @@ The workshop will require the following software:
 - [Miniconda](https://docs.anaconda.com/miniconda/): A lighter installation of Anaconda Distribution that includes only conda and Python. This will be used to create the environment with the libraries used to access and visualise the results from ROAST.
 - [Git](https://git-scm.com/downloads)
 - [VScode \(suggested\)](https://code.visualstudio.com/download)
-
 
 ```Note that most of the commands to build the environments and install the dependencies can be run from the terminal within VS code. If you use a different editor you can run the commands from your preferred terminal directly.```
 
@@ -42,31 +41,10 @@ git clone https://github.com/davide-aloi/neuroscience-workshop-Innsbruck-2025
 cd neuroscience-workshop-Innsbruck-2025
 ```
 
-### Python envioronment
-1) Download and install Miniconda
-2) From VScode, open a new terminal and build the environment with the required libraries:
-
-```bash
-conda env create -f assets/environment.yml
-# Verify that the environment was correctly created
-conda env list
-```
-
-This should output: 
-```console
-# conda environments:
-base                     C:\Users\User\miniconda3
-tdcs_env                 C:\Users\User\miniconda3\envs\tdcs_env
-```
-
-To activate a environment:
-```bash
-conda activate tdcs_env
-```
-
 ### ROAST 
 
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
+
 ```bash
 # Clone ROAST into the roast folder of this repository
 mkdir roast
@@ -74,6 +52,7 @@ git clone https://github.com/andypotatohy/roast roast
 ```
 
 2) From Matlab, navigate to the current repository folder, and either right-click on the roast folder -> add to path or run the following command in the Matlab console:
+
 ```matlab
 addpath('roast')  
 ```
@@ -83,10 +62,10 @@ addpath('roast')
 
 - Note: For simplicity I have placed an example T1 in the `mri_data` folder of the current repository. You can use this file to run the ROAST pipeline, or you can download your own T1 scan from the link above (icbm_avg_152_t1_tal_nlin_symmetric_VI.nii).
 
-Place the file within the mri_data folder of the current repository. 
+Place the file within the mri_data folder of the workshop repository. 
 
 > [!NOTE]  
->You can use your MRI scans if you have them, but for the sake of this workshop we will use the ICBM152 template. Moreover, the ROAST pipeline allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
+> You can use your MRI scans if you have them, but for the sake of this workshop we will use the ICBM152 template. Moreover, the ROAST pipeline allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
 
 
 # Step-by-Step Instructions
@@ -95,21 +74,17 @@ For simplicity, the workflow is divided into sub-pages, each focusing on a speci
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
 3. [ROAST putput files](docs/roast_output.md).
 4. [Normalisation with SPM](docs/normalise_roast_results.md). 
-5. [Visualising results and gathering ROI-specific metrics](docs/visualisation_and_roi.md).
-
+5. [Visualising ROAST results in MRIcroGL](docs/results_visualisation.md).
 
 
 # FAQs
 - [Git command not found (windows) &rarr; add git to system paths](https://linuxhint.com/add-git-to-path-windows/)
-- [Conda command not found (windows) &rarr; add conda to system paths](https://saturncloud.io/blog/solving-the-conda-command-not-recognized-issue-on-windows-10/)
 
 # Useful resources
 - [ROAST homepage](https://www.opensourceimaging.org/project/roast/#:~:text=ROAST%3A%20A%20fully%20automated%2C%20Realistic,such%20as%20iso2mesh%20and%20getDP.)
-- [Nilearn introduction](https://nilearn.github.io/stable/introduction.html)
 - [MRIcroGL manual](https://www.cgl.ucsf.edu/home/meng/dicom/mricrogl-manual.pdf)
-- [AAL3 Atlas](https://www.oxcns.org/aal3.html)
 
 
 # References
-1) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
-2) ...
+1) 
+2) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
