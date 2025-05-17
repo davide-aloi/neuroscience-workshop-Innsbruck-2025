@@ -1,6 +1,6 @@
 # Using ROAST: how to place virtual electrodes and run simulations for tDCS-induced electric fields
 
-In studies investigating transcranial direct current stimulation (tDCS) (both in healthy and clinical populations) a significant source of variability in observed outcomes arises from the heterogeneity of brain anatomical features or  abnormalities. In fact, inter-individual differences in brain lesions, cortical atrophy, and skull geometry substantially affect how electric current flows through the brain. This variability undermines the reproducibility and precision of manual electrode placement approaches, often leading to reduced current intensity at the intended target and unpredictable current spread or direction (Nasimova & Huang, 2022 TO ADD).
+In studies investigating transcranial direct current stimulation (tDCS) (both in healthy and clinical populations) a significant source of variability in observed outcomes arises from the heterogeneity of brain anatomical features or  abnormalities. In fact, inter-individual differences in brain lesions, cortical atrophy, and skull geometry substantially affect how electric current flows through the brain. This variability undermines the reproducibility and precision of manual electrode placement approaches, often leading to reduced current intensity at the intended target and unpredictable current spread or direction (Nasimova & Huang, 2022).
 
 One approach to address the challenges posed by inter-individual anatomical variability is the utilisation of individualised finite element models (FEM) derived from MRI scans, which allow the prediction of tDCS-induced electric field distributions across different tissues and regions of the brain (Albizu et al., 2020; Nasimova & Huang, 2022). These models have become increasingly accessible thanks to advancements in automated tissue segmentation and the emergence of open-source software packages that streamliene the modelling pipelines, such as SimNIBS (Windhoff et al., 2013) and ROAST (Huang et al., 2018, 2019).
 
@@ -108,3 +108,13 @@ Other parameters that one can specify are present in the official documentation.
 
 ### Summary
 This guide provided an overview of how ROAST models tDCS-induced electric fields by using individualised MRI-based head models and flexible electrode configurations. I covered the key steps in the ROAST pipeline, including tissue segmentation, conductivity assignment, and electrode placement using both standard and custom approaches.
+
+
+
+# References
+1) Albizu, A., Fang, R., Indahlastari, A., O’Shea, A., Stolte, S. E., See, K. B., Boutzoukas, E. M., Kraft, J. N., Nissim, N. R., & Woods, A. J. (2020). Machine learning and individual variability in electric field characteristics predict tDCS treatment response. Brain Stimulation, 13(6), 1753–1764. https://doi.org/10.1016/j.brs.2020.10.001
+2) Nasimova, M., & Huang, Y. (2022). Applications of open-source software ROAST in clinical studies: A review. Brain Stimulation, 15(4), 1002–1010. https://doi.org/10.1016/j.brs.2022.07.003.
+3) Windhoff, M., Opitz, A., & Thielscher, A. (2013). Electric field calculations in brain stimulation based on finite elements: An optimized processing pipeline for the generation and usage of accurate individual head models. Human Brain Mapping, 34(4), 923–935. https://doi.org/10.1002/hbm.21479
+4) Huang, Y., Datta, A., Bikson, M., & Parra, L. C. (2019). Realistic volumetric-approach to simulate transcranial electric stimulation—ROAST—a fully automated open-source pipeline. Journal of Neural Engineering, 16(5), 056006. https://doi.org/10.1088/1741-2552/ab208d
+5) Huang, Y., Datta, A., Bikson, M., & Parra, L. C. (2018). ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. 2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 3072–3075. https://doi.org/10.1109/EMBC.2018.8513086
+

@@ -27,7 +27,6 @@ The workshop will require the following software:
 - [Matlab](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html)
 - [ROAST](https://www.parralab.org/roast/): An open source tool that runs on Matlab, used to compute electric fields from MRI structural images.  
 - [MRIcroGL](https://www.nitrc.org/projects/mricrogl): MRIcroGL allows you to view 2D slices and renderings of your brain imaging data. We will use it to find the coordinates for the virtual electrodes
-- [Miniconda](https://docs.anaconda.com/miniconda/): A lighter installation of Anaconda Distribution that includes only conda and Python. This will be used to create the environment with the libraries used to access and visualise the results from ROAST.
 - [Git](https://git-scm.com/downloads)
 - [VScode \(suggested\)](https://code.visualstudio.com/download)
 
@@ -42,7 +41,6 @@ cd neuroscience-workshop-Innsbruck-2025
 ```
 
 ### ROAST 
-
 1) Download Roast from its [homepage](https://www.parralab.org/roast/) or clone the repository by running: 
 
 ```bash
@@ -60,16 +58,14 @@ addpath('roast')
 ### Download test data and unzip it
 - [T1 scan](https://packages.bic.mni.mcgill.ca/mni-models/icbm152/mni_icbm152_nl_VI_nifti.zip)
 
-- Note: For simplicity I have placed an example T1 in the `mri_data` folder of the current repository. You can use this file to run the ROAST pipeline, or you can download your own T1 scan from the link above (icbm_avg_152_t1_tal_nlin_symmetric_VI.nii).
-
-Place the file within the mri_data folder of the workshop repository. 
+- Note: For simplicity I have placed the above T1 scan in the `mri_data` folder of the current repository (icbm_avg_152_t1_tal_nlin_symmetric_VI.nii).
 
 > [!NOTE]  
 > You can use your MRI scans if you have them, but for the sake of this workshop we will use the ICBM152 template. Moreover, the ROAST pipeline allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
 
 
 # Step-by-Step Instructions
-For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
+For simplicity, the workflow is divided into sub-sections, each focusing on a specific step of the process:
 1. [Using ROAST: an overview](docs/roast.md).
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
 3. [ROAST putput files](docs/roast_output.md).
@@ -86,5 +82,5 @@ For simplicity, the workflow is divided into sub-pages, each focusing on a speci
 
 
 # References
-1) 
+1) Nasimova, M., & Huang, Y. (2022). Applications of open-source software ROAST in clinical studies: A review. Brain Stimulation, 15(4), 1002–1010. https://doi.org/10.1016/j.brs.2022.07.003.
 2) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
