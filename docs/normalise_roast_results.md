@@ -24,4 +24,8 @@ matlabbatch{2}.spm.spatial.normalise.estwrite.eoptions.tpm = {'C:\Users\User\git
 '''
 
 
+## Output files
+After running the normalisation step, you will find the normalised and smoothed images in the same folder of the original ROAST output files. Discussing each output file in detail is beyond the scope of this document, but here is a brief overview of the most relevant files for group-level analyses:
+- sw*emag_.nii (E-field magnituded, unit of V/m)
+- sw*e*.nii (E-field vector, unit of V/m)
 

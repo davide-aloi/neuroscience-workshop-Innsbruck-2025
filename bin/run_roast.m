@@ -62,3 +62,9 @@ roast(t1, {'C3', 1.85,'Fp2', -1.85}, 'capType', '1020' ,'elecType', 'pad', 'elec
 roast(t1, {'custom1', 1.0,'custom2', -1.0}, 'electype', 'pad', 'elecsize', [50 50 3])
 
 % Note that all options can be combined with the custom electrodes (i.e., see example 24 https://github.com/andypotatohy/roast?tab=readme-ov-file#example-24 )
+
+
+
+%% Outcome files
+% ROAST will generate a number of files in the current directory.
+% An overview is provided in docs roast_output.md

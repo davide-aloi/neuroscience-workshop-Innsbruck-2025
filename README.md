@@ -91,8 +91,9 @@ Place the file within the mri_data folder of the current repository.
 For simplicity, the workflow is divided into sub-pages, each focusing on a specific step of the process:
 1. [Using ROAST: an overview](docs/roast.md).
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
-3. [Normalisation with SPM](docs/normalise_roast_results.md). 
-4. Visualising results and gathering ROI-specific metrics.
+3. [ROAST putput files](docs/roast_output.md).
+4. [Normalisation with SPM](docs/normalise_roast_results.md). 
+5. Visualising results and gathering ROI-specific metrics.
 
 
 
