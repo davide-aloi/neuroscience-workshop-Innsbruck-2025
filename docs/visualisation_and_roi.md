@@ -10,5 +10,5 @@ To visualise the results of your ROAST simulations on MRIcroGL, you can follow t
 - Change the Darkest setting to 0 and the Brightest to 0.35 (or adjust it to your liking). This will make the electric field more visible.
 
 The output should look similar to the image below:
-![MRIcroGL Example](assets/mricrogl_example.png)
+![MRIcroGL Example](../images/README/mricrogl_example.png)
 
