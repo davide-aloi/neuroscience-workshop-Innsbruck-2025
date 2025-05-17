@@ -81,6 +81,8 @@ addpath('roast')
 ### Download test data and unzip it
 - [T1 scan](https://packages.bic.mni.mcgill.ca/mni-models/icbm152/mni_icbm152_nl_VI_nifti.zip)
 
+- Note: For simplicity I have placed an example T1 in the `mri_data` folder of the current repository. You can use this file to run the ROAST pipeline, or you can download your own T1 scan from the link above (icbm_avg_152_t1_tal_nlin_symmetric_VI.nii).
+
 Place the file within the mri_data folder of the current repository. 
 
 > [!NOTE]  
@@ -93,7 +95,7 @@ For simplicity, the workflow is divided into sub-pages, each focusing on a speci
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
 3. [ROAST putput files](docs/roast_output.md).
 4. [Normalisation with SPM](docs/normalise_roast_results.md). 
-5. Visualising results and gathering ROI-specific metrics.
+5. [Visualising results and gathering ROI-specific metrics](docs/visualisation_and_roi.md).
 
 
 
