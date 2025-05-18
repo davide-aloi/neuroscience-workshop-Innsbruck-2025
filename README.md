@@ -64,7 +64,7 @@ addpath('roast')
 > You can try all the scripts with your MRI scans if you have them. However example data has been placed in mri_data folder and is also present in roast/example. Moreover, ROAST allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
 
 
-# Step-by-Step Instructions
+# Running ROAST: Step-by-Step guide
 For simplicity, the workflow is divided into sub-sections, each focusing on a specific step of the process:
 1. [Using ROAST: an overview](docs/roast.md).
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
