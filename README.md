@@ -68,7 +68,7 @@ addpath('roast')
 For simplicity, the workflow is divided into sub-sections, each focusing on a specific step of the process:
 1. [Using ROAST: an overview](docs/roast.md).
 2. [Running the simulation with ROAST: practical examples](docs/roast_simulation.md).
-3. [ROAST putput files](docs/roast_output.md).
+3. [ROAST output files](docs/roast_output.md).
 4. [Normalisation with SPM](docs/normalise_roast_results.md). 
 5. [Visualising ROAST results in MRIcroGL](docs/results_visualisation.md).
 
