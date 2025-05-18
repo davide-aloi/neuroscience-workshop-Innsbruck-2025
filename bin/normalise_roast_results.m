@@ -1,6 +1,7 @@
 % Author: Davide Aloi - Workshop Version
 % Simplified script for processing a single ROAST result
 % Performs: resampling, normalisation, smoothing, and binary GM+WM mask generation
+% Note: This script was adapted from Luke Andrews' work.
 
 % Set path to roast output
 data_path = '../mri_data/';

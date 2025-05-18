@@ -61,7 +61,7 @@ addpath('roast')
 - Note: For simplicity I have placed the above T1 scan in the `mri_data` folder of the current repository (icbm_avg_152_t1_tal_nlin_symmetric_VI.nii).
 
 > [!NOTE]  
-> You can use your MRI scans if you have them, but for the sake of this workshop we will use the ICBM152 template. Moreover, the ROAST pipeline allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
+> You can try all the scripts with your MRI scans if you have them. However example data has been placed in mri_data folder and is also present in roast/example. Moreover, ROAST allows to use T2 scans as well, but for the sake of simplicity we will only use T1 scans. However, if you have T2 scans, you can use them as well to improve the accuracy of the SPM segmentation.
 
 
 # Step-by-Step Instructions
@@ -84,3 +84,6 @@ For simplicity, the workflow is divided into sub-sections, each focusing on a sp
 # References
 1) Nasimova, M., & Huang, Y. (2022). Applications of open-source software ROAST in clinical studies: A review. Brain Stimulation, 15(4), 1002–1010. https://doi.org/10.1016/j.brs.2022.07.003.
 2) Huang Y, Datta A, Bikson M, Parra LC. ROAST: An Open-Source, Fully-Automated, Realistic Volumetric-Approach-Based Simulator For TES. Annu Int Conf IEEE Eng Med Biol Soc. 2018 Jul;2018:3072-3075. doi: 10.1109/EMBC.2018.8513086. PMID: 30441043.
+
+# Awknowledgements
+Most of the scripts in this repository were created during my PhD, under the supervision of [Dr. Davinia Fernandez-Espejo](https://www.daviniafernandezespejo.com/) at the [Centre for Human Brain Health](https://www.birmingham.ac.uk/research/centres-institutes/human-brain-health)
