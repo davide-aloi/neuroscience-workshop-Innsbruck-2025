@@ -1,5 +1,5 @@
 
-# Python envioronment
+# Python environment setup for ROAST analysis
 If you want to perform some analysis on the ROAST results using Python, you can set up a Python environment with the required libraries. This is optional, but it can be useful if you want to perform some custom analysis or visualisation of the ROAST results.
 
 1) Download and install Miniconda
