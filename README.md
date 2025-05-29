@@ -24,7 +24,7 @@ In this workshop, we will go through the entire process highlighted above and we
 
 ## Software requirement and installation
 The workshop will require the following software:
-- [Matlab](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html)
+- [Matlab](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html) including the [Imange Processing ToolBox Add On](https://www.mathworks.com/products/image-processing.html)
 - [ROAST](https://www.parralab.org/roast/): An open source tool that runs on Matlab, used to compute electric fields from MRI structural images.  
 - [MRIcroGL](https://www.nitrc.org/projects/mricrogl): MRIcroGL allows you to view 2D slices and renderings of your brain imaging data. We will use it to find the coordinates for the virtual electrodes
 - [Git](https://git-scm.com/downloads)
